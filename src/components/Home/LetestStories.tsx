@@ -35,7 +35,7 @@ const LetestStories = async () => {
           const formatted = formatDate(updatedAt);
 
           return (
-            <Link href={`/${_id}`} key={_id}>
+            <Link href={`/news/${_id}`} key={_id}>
               <Card className="w-full max-w-md overflow-hidden">
                 <div className="relative w-full h-40">
                   <Image

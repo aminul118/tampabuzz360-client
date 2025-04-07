@@ -3,6 +3,8 @@ import React from "react";
 import Container from "../ui/Container";
 
 const Promotion = () => {
+
+  
   return (
     <Container>
       <Image

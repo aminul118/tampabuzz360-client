@@ -9,6 +9,25 @@ import DarkModeToggle from "./DarkModeToggle";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navMenu = [
+    {
+      title: "Tampa Today",
+      url: "/",
+    },
+    {
+      title: "Guides & Tips",
+      url: "/guides-tips",
+    },
+    {
+      title: "Events",
+      url: "/events",
+    },
+    {
+      title: "Trending Now",
+      url: "/tending",
+    },
+  ];
+
   return (
     <div className="sticky top-0 z-50 h-16 flex items-center justify-center bg-white dark:bg-slate-950 shadow-md">
       <div className="container mx-auto flex justify-between items-center px-4 text-[#EA1C79] font-semibold">
@@ -41,29 +60,18 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex text-[#1F5781]">
           <ul className="flex items-center gap-6">
-            <li>
-              <Link href="/" className="hover:text-blue-600">
-                Tampa Today
-              </Link>
-            </li>
-            <li>
-              <Link href="/#services" className="hover:text-blue-600">
-                Guides & Tips
-              </Link>
-            </li>
-            <li>
-              <Link href="/#about" className="hover:text-blue-600">
-                Events
-              </Link>
-            </li>
-            <li>
-              <Link href="/#contact" className="hover:text-blue-600">
-                Trending Now
-              </Link>
-            </li>
+            {/* Menu mapping and show */}
+            {navMenu.map((menu, i) => (
+              <li key={i}>
+                <Link href={menu.url}>{menu.title}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
-        <DarkModeToggle />
+        <div className="hidden lg:block">
+          <DarkModeToggle />
+        </div>
+
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-gray-800 dark:text-white"
@@ -77,19 +85,23 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-white dark:bg-slate-800 shadow-md md:hidden">
-          <ul className="flex flex-col items-center gap-4 py-4">
-            {["Home", "Services", "About", "Contact"].map((item) => (
-              <li key={item}>
+          <ul className="flex flex-col items-center gap-2 py-4">
+            {/* Menu mapping and show */}
+            {navMenu.map((item, i) => (
+              <li key={i}>
                 <Link
-                  href={`/#${item === "Home" ? "" : item.toLowerCase()}`}
-                  className="block p-2 hover:text-blue-600"
+                  href={item.url}
+                  className="block  hover:text-blue-600 dark:hover:text-pink-500"
                   onClick={() => setIsOpen(false)}
                 >
-                  {item}
+                  {item.title}
                 </Link>
               </li>
             ))}
           </ul>
+          <div className="flex justify-center pb-4 items-center gap-3">
+            Theme <DarkModeToggle />
+          </div>
         </div>
       )}
     </div>

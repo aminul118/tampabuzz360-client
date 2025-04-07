@@ -3,6 +3,8 @@ import React from "react";
 import Copiright from "./Copiright";
 import Image from "next/image";
 
+
+
 const Footer = () => {
   const allThingsGood = [
     {
@@ -25,8 +27,8 @@ const Footer = () => {
 
   const moreFromUs = [
     {
-      title: "Advertise",
-      url: "/advertise",
+      title: "Team",
+      url: "/team",
     },
     {
       title: "Contact",
@@ -63,6 +65,7 @@ const Footer = () => {
             Since 2013, That’s So Tampa has been the most trusted local resource
             for discovering All Things Good in Tampa Bay.
           </p>
+         
         </div>
 
         {/* Middle */}

@@ -13,15 +13,18 @@ const Navbar = () => {
     <div className="sticky top-0 z-50 h-16 flex items-center justify-center bg-white dark:bg-slate-950 shadow-md">
       <div className="container mx-auto flex justify-between items-center px-4 text-[#EA1C79] font-semibold">
         {/* Logo */}
-        <div className={`dark:hidden`}>
-          <Image
-            src={"/logo.svg"}
-            width={220}
-            height={60}
-            alt="logo of Tampabuzz 360"
-            priority
-          />
-        </div>
+        <Link href={"/"}>
+          <div className={`dark:hidden`}>
+            <Image
+              src={"/logo.svg"}
+              width={220}
+              height={60}
+              alt="logo of Tampabuzz 360"
+              priority
+            />
+          </div>
+        </Link>
+
         {/* Logo White*/}
         <div className={`hidden dark:block`}>
           <Image

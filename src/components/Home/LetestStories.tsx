@@ -10,7 +10,7 @@ import { Button } from "../ui/button";
 import getAllNews from "@/lib/getAllNews";
 
 const LetestStories = async () => {
-  const news = await getAllNews({});
+  const news = await getAllNews({ limit: "10" });
   console.log(news);
 
   // Date Format
@@ -35,7 +35,7 @@ const LetestStories = async () => {
           const formatted = formatDate(updatedAt);
 
           return (
-            <Link href={`/news/${_id}`} key={_id}>
+            <Link href={`/${_id}`} key={_id}>
               <Card className="w-full max-w-md overflow-hidden">
                 <div className="relative w-full h-40">
                   <Image

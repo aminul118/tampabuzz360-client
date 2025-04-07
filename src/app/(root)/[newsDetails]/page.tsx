@@ -3,11 +3,17 @@ import Container from "@/components/ui/Container";
 import Image from "next/image";
 import React from "react";
 
-const NewsDetailsPage = async ({ params }: { params: { id: string } }) => {
-  const { id } = await params;
-  console.log(id);
+const NewsDetailsPage = async ({
+  params,
+}: {
+  params: { newsDetails: string };
+}) => {
+  const { newsDetails } = await params;
+  console.log(newsDetails);
 
-  const res = await fetch(`https://server.tampabuzz360.com/api/v1/news/${id}`);
+  const res = await fetch(
+    `https://server.tampabuzz360.com/api/v1/news/${newsDetails}`
+  );
   const news = await res.json();
   console.log("news", news);
   const data = news.data;

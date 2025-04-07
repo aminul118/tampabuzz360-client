@@ -3,8 +3,6 @@ import React from "react";
 import Copiright from "./Copiright";
 import Image from "next/image";
 
-
-
 const Footer = () => {
   const allThingsGood = [
     {
@@ -27,8 +25,8 @@ const Footer = () => {
 
   const moreFromUs = [
     {
-      title: "Team",
-      url: "/team",
+      title: "About",
+      url: "/about",
     },
     {
       title: "Contact",
@@ -65,12 +63,11 @@ const Footer = () => {
             Since 2013, That’s So Tampa has been the most trusted local resource
             for discovering All Things Good in Tampa Bay.
           </p>
-         
         </div>
 
         {/* Middle */}
         <div>
-          <p className="text-lg font-semibold mb-3">All Things Good</p>
+          <p className="text-lg font-semibold mb-5">All Things Good</p>
           <ul className="space-y-2">
             {allThingsGood.map((menu, i) => (
               <li key={i}>
@@ -84,7 +81,7 @@ const Footer = () => {
 
         {/* Right */}
         <div>
-          <p className="text-lg font-semibold mb-3">More From Us</p>
+          <p className="text-lg font-semibold mb-5">More From Us</p>
           <ul className="space-y-2">
             {moreFromUs.map((menu, i) => (
               <li key={i}>

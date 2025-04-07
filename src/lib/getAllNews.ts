@@ -8,8 +8,8 @@ interface INews {
 const getAllNews = async ({
   search,
   category,
-  page = "1",     // default to "1"
-  limit = "10",  // default to "10"
+  page = "1", // default to "1"
+  limit = "10", // default to "10"
 }: INews) => {
   const queryParams = new URLSearchParams();
 

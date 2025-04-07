@@ -13,8 +13,8 @@ const Navbar = () => {
     <div className="sticky top-0 z-50 h-16 flex items-center justify-center bg-white dark:bg-slate-950 shadow-md">
       <div className="container mx-auto flex justify-between items-center px-4 text-[#EA1C79] font-semibold">
         {/* Logo */}
-        <Link href={"/"}>
-          <div className={`dark:hidden`}>
+        <div className={`dark:hidden`}>
+          <Link href="/">
             <Image
               src={"/logo.svg"}
               width={220}
@@ -22,18 +22,20 @@ const Navbar = () => {
               alt="logo of Tampabuzz 360"
               priority
             />
-          </div>
-        </Link>
+          </Link>
+        </div>
 
-        {/* Logo White*/}
-        <div className={`hidden dark:block`}>
-          <Image
-            src={"/logo-white.svg"}
-            width={200}
-            height={60}
-            alt="logo of Tampabuzz 360"
-            priority
-          />
+        {/* Logo white */}
+        <div className={`dark:block hidden`}>
+          <Link href="/">
+            <Image
+              src={"/logo-white.svg"}
+              width={220}
+              height={60}
+              alt="logo of Tampabuzz 360"
+              priority
+            />
+          </Link>
         </div>
 
         {/* Desktop Navigation */}

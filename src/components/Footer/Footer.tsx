@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Copiright from "./Copiright";
+import Image from "next/image";
 
 const Footer = () => {
   const allThingsGood = [
@@ -45,7 +46,19 @@ const Footer = () => {
     <footer className="bg-black py-10 px-4 md:px-10 text-white">
       <div className="flex flex-col md:flex-row gap-6 justify-between container mx-auto">
         {/* Left */}
-        <div>
+        <div className=" flex flex-col justify-center gap-4">
+          {/* Logo white */}
+          <div>
+            <Link href="/">
+              <Image
+                src={"/logo-white.svg"}
+                width={260}
+                height={80}
+                alt="logo of Tampabuzz 360"
+                priority
+              />
+            </Link>
+          </div>
           <p className=" text-sm max-w-xl">
             Since 2013, That’s So Tampa has been the most trusted local resource
             for discovering All Things Good in Tampa Bay.

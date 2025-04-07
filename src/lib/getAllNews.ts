@@ -8,15 +8,15 @@ interface INews {
 const getAllNews = async ({
   search,
   category,
-  page = "1",
-  limit = "10",
+  page = "1",     // default to "1"
+  limit = "10",  // default to "10"
 }: INews) => {
   const queryParams = new URLSearchParams();
 
   if (search) queryParams.append("search", search);
   if (category) queryParams.append("category", category);
-  queryParams.append("page", page); // default to "1"
-  queryParams.append("limit", limit); // default to "10"
+  queryParams.append("page", page);
+  queryParams.append("limit", limit);
 
   const res = await fetch(
     `https://server.tampabuzz360.com/api/v1/news?${queryParams.toString()}`

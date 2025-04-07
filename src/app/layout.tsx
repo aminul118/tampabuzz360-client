@@ -14,7 +14,7 @@ export type ChildrenType = {
 const RootLayout = ({ children }: ChildrenType) => {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className="bg[#F2F4F8]">
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

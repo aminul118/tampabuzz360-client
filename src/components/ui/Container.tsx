@@ -7,7 +7,7 @@ type Containertype = ChildrenType & {
 
 const Container = ({ children, className, background }: Containertype) => {
   return (
-    <div className={`${background} py-6 lg:py-8 `}>
+    <div className={`${background} py-6 lg:py-8 px-2`}>
       <div className={`${className} mx-auto container`}> {children}</div>
     </div>
   );

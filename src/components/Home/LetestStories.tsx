@@ -27,7 +27,7 @@ const LetestStories = async () => {
     <Container>
       <Title title="Letest Stories" />
 
-      <div className="grid grid-cols-5 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
         {news?.data?.map((singleNews: any) => {
           const { _id, mainHeading, contents, updatedAt } = singleNews;
           const imageUrl = contents?.[0]?.image;
@@ -56,7 +56,7 @@ const LetestStories = async () => {
           );
         })}
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-6">
         <Link href="/tampa-today">
           <Button>Browse all stories</Button>
         </Link>

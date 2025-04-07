@@ -12,7 +12,7 @@ const Navbar = () => {
   const navMenu = [
     {
       title: "Tampa Today",
-      url: "/",
+      url: "/tampa-today",
     },
     {
       title: "Guides & Tips",

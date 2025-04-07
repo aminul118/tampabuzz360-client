@@ -6,10 +6,11 @@ import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
 import Link from "next/link";
 import Title from "../ui/Title";
+import { Button } from "../ui/button";
+import getAllNews from "@/lib/getAllNews";
 
 const LetestStories = async () => {
-  const res = await fetch("https://server.tampabuzz360.com/api/v1/news");
-  const news = await res.json();
+  const news = await getAllNews({});
   console.log(news);
 
   // Date Format
@@ -54,6 +55,11 @@ const LetestStories = async () => {
             </Link>
           );
         })}
+      </div>
+      <div className="flex justify-center">
+        <Link href="/tampa-today">
+          <Button>Browse all stories</Button>
+        </Link>
       </div>
     </Container>
   );

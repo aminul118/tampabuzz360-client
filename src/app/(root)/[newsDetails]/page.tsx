@@ -1,13 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 import React from "react";
 
-const NewsDetailsPage = async ({
-  params,
-}: {
-  params: { newsDetails: string };
-}) => {
+const NewsDetailsPage = async ({ params }: { params: any }) => {
   const { newsDetails } = await params;
   console.log(newsDetails);
 
@@ -29,11 +26,9 @@ const NewsDetailsPage = async ({
         <div className="col-span-8">
           <div>
             {contents.map((content: any, i: number) => {
-              console.log(content);
               const { image, title, description } = content;
               return (
                 <div key={i} className="space-y-4 mt-10">
-                  {/* Full-width image */}
                   {image && (
                     <Image
                       src={image}

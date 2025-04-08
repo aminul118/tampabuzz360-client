@@ -6,7 +6,9 @@ import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 
-type Props = { params: { id: string } };
+type Props = {
+  params: Promise<{ id: string }>;
+};
 
 // !Seo
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

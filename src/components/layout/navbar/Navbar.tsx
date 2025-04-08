@@ -5,28 +5,10 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import DarkModeToggle from "./DarkModeToggle";
+import navMenu from "@/lib/constants/navMenu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navMenu = [
-    {
-      title: "Tampa Today",
-      url: "/tampa-today",
-    },
-    {
-      title: "Guides & Tips",
-      url: "/guides-tips",
-    },
-    {
-      title: "Events",
-      url: "/events",
-    },
-    {
-      title: "Trending Now",
-      url: "/tending",
-    },
-  ];
 
   return (
     <div className="sticky top-0 z-50 h-16 flex items-center justify-center bg-white dark:bg-slate-950 shadow-md">

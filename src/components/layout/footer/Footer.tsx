@@ -1,47 +1,10 @@
 import Link from "next/link";
 import React from "react";
-import Copiright from "./Copiright";
 import Image from "next/image";
+import Copiright from "./Copiright";
+import { allThingsGood, moreFromUs } from "@/lib/constants/footerMenu";
 
 const Footer = () => {
-  const allThingsGood = [
-    {
-      title: "Stories",
-      url: "/stories",
-    },
-    {
-      title: "Events",
-      url: "/events",
-    },
-    {
-      title: "Eats",
-      url: "/eats",
-    },
-    {
-      title: "Things To Do",
-      url: "/things-to-do",
-    },
-  ];
-
-  const moreFromUs = [
-    {
-      title: "About",
-      url: "/about",
-    },
-    {
-      title: "Contact",
-      url: "/contact",
-    },
-    {
-      title: "Careers",
-      url: "/careers",
-    },
-    {
-      title: "Privacy Policy",
-      url: "/privacy-policy",
-    },
-  ];
-
   return (
     <footer className="bg-black py-10 px-4 md:px-10 text-white">
       <div className="flex flex-col md:flex-row gap-6 justify-between container mx-auto">

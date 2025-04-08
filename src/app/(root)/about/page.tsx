@@ -1,14 +1,14 @@
-import AboutFAQ from "@/components/About/AboutFAQ";
-import AdvertisingDisclaimer from "@/components/About/AdvertisingDisclaimer";
-import Vision from "@/components/About/Vision";
+import AboutFAQ from "@/components/about/AboutFAQ";
+import AdvertisingDisclaimer from "@/components/about/AdvertisingDisclaimer";
+import Team from "@/components/about/Team";
+import Vision from "@/components/about/Vision";
 import Container from "@/components/ui/Container";
 import React from "react";
-import Team from "../team/page";
 
 const AboutPage = () => {
   return (
     <Container>
-      <div className="space-y-8">
+      <div className="space-y-20">
         <Team />
         <Vision />
         <AboutFAQ />

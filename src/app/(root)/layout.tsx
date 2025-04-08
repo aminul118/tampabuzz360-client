@@ -1,7 +1,7 @@
 import React from "react";
 import { ChildrenType } from "../layout";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
+import Navbar from "@/components/layout/navbar/Navbar";
+import Footer from "@/components/layout/footer/Footer";
 
 const MainLayout = ({ children }: ChildrenType) => {
   return (

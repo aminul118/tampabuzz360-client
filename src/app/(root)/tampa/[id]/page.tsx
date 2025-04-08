@@ -14,7 +14,8 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const news = await getNewsById(id);
-  const { mainHeading, author, category, contents } = news.data;
+  const { mainHeading, author, category, contents, createdAt, updatedAt } =
+    news.data;
 
   // Efficiently concatenate all content descriptions
   const description =
@@ -27,6 +28,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Tampa | ${mainHeading}`,
     description,
     author,
+    type: "article",
+    publishedAt: createdAt,
+    updatedAt: updatedAt,
     keywords: `${mainHeading}, Tampa, news, Florida, ${category}`,
     url: `https://www.tampabuzz360.com/tampa/${id}`,
     images: contents?.map((content: any) => content.image) || [],
@@ -43,6 +47,7 @@ const NewsDetailsPage = async ({
   const { id } = await params;
   const news = await getNewsById(id);
   const { mainHeading, author, contents } = news.data;
+  console.log(news);
 
   return (
     <Container>

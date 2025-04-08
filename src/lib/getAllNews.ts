@@ -21,6 +21,9 @@ const getAllNews = async ({
   const res = await fetch(
     `https://server.tampabuzz360.com/api/v1/news?${queryParams.toString()}`
   );
+  if (!res.ok) {
+    throw new Error("Failed to fetch");
+  }
   return await res.json();
 };
 

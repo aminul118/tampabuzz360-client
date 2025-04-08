@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@/components/ui/Container";
+import getNewsById from "@/lib/getNewsById";
 import Image from "next/image";
 import React from "react";
 
@@ -9,11 +10,8 @@ const NewsDetailsPage = async ({
   params: Promise<{ id: string }>;
 }) => {
   const { id } = await params;
-  console.log(id);
-
-  const res = await fetch(`https://server.tampabuzz360.com/api/v1/news/${id}`);
-
-  const news = await res.json();
+  // console.log(id);
+  const news = await getNewsById(id)
   const data = news.data;
   const { mainHeading, author, contents } = data;
 

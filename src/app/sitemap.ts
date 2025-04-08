@@ -1,3 +1,4 @@
+import { allThingsGood, moreFromUs } from "@/lib/constants/footerMenu";
 import navMenu from "@/lib/constants/navMenu";
 import getAllIds from "@/lib/getAllIds";
 import { MetadataRoute } from "next";
@@ -31,6 +32,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     ...generateSitemapEntries(navMenu), //navbar url which is static
+    ...generateSitemapEntries(allThingsGood),
+    ...generateSitemapEntries(moreFromUs),
     ...dynamicNewsIds,
   ];
 }

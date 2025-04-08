@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
-
 import Container from "../ui/Container";
 import { Card, CardContent } from "../ui/card";
 import Image from "next/image";

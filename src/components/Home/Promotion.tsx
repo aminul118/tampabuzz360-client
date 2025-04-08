@@ -1,10 +1,7 @@
 import Image from "next/image";
-import React from "react";
 import Container from "../ui/Container";
 
 const Promotion = () => {
-
-  
   return (
     <Container>
       <Image

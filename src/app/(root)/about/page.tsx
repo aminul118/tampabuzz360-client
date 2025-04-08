@@ -3,7 +3,6 @@ import AdvertisingDisclaimer from "@/components/about/AdvertisingDisclaimer";
 import Team from "@/components/about/Team";
 import Vision from "@/components/about/Vision";
 import Container from "@/components/ui/Container";
-import React from "react";
 
 const AboutPage = () => {
   return (

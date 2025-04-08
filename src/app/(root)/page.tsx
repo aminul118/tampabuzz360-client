@@ -1,7 +1,7 @@
-import BrekingNews from "@/components/home/BrekingNews";
-import FeaturedStories from "@/components/home/FeaturedStories";
-import LetestStories from "@/components/home/LetestStories";
-import Promotion from "@/components/home/Promotion";
+import BrekingNews from "@/components/Home/BrekingNews";
+import FeaturedStories from "@/components/Home/FeaturedStories";
+import LetestStories from "@/components/Home/LetestStories";
+import Promotion from "@/components/Home/Promotion";
 
 const HomePage = () => {
   return (

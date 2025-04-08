@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import DarkModeToggle from "./DarkModeToggle";
 import navMenu from "@/lib/constants/navMenu";
+import DarkModeToggle from "./DarkModeToggle";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

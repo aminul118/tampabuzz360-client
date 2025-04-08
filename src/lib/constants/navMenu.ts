@@ -1,7 +1,7 @@
 const navMenu = [
   {
     title: "Tampa Today",
-    url: "/tampa-today",
+    url: "/tampa",
   },
   {
     title: "Guides & Tips",

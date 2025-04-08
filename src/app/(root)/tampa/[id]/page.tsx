@@ -1,8 +1,37 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@/components/ui/Container";
 import getNewsById from "@/lib/getNewsById";
+import generateSEO from "@/lib/seo";
+import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
+
+type Props = { params: { id: string } };
+
+// !Seo
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const news = await getNewsById(id);
+  const { mainHeading, author, category, contents } = news.data;
+
+  // Efficiently concatenate all content descriptions
+  const description =
+    contents?.reduce(
+      (acc: string, content: any) => acc + " " + content.description,
+      ""
+    ) || "Read the latest news and insights from Tampa.";
+
+  return generateSEO({
+    title: `Tampa | ${mainHeading}`,
+    description,
+    author,
+    keywords: `${mainHeading}, Tampa, news, Florida, ${category}`,
+    url: `https://www.tampabuzz360.com/tampa/${id}`,
+    images: contents?.map((content: any) => content.image) || [],
+  });
+}
+
+// ! Main Page
 
 const NewsDetailsPage = async ({
   params,
@@ -10,10 +39,8 @@ const NewsDetailsPage = async ({
   params: Promise<{ id: string }>;
 }) => {
   const { id } = await params;
-  // console.log(id);
-  const news = await getNewsById(id)
-  const data = news.data;
-  const { mainHeading, author, contents } = data;
+  const news = await getNewsById(id);
+  const { mainHeading, author, contents } = news.data;
 
   return (
     <Container>

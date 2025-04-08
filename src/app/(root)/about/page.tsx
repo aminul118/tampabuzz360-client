@@ -1,7 +1,7 @@
-import AboutFAQ from "@/components/about/AboutFAQ";
-import AdvertisingDisclaimer from "@/components/about/AdvertisingDisclaimer";
-import Team from "@/components/about/Team";
-import Vision from "@/components/about/Vision";
+import AboutFAQ from "@/components/About/AboutFAQ";
+import AdvertisingDisclaimer from "@/components/About/AdvertisingDisclaimer";
+import Team from "@/components/About/Team";
+import Vision from "@/components/About/Vision";
 import Container from "@/components/ui/Container";
 
 const AboutPage = () => {

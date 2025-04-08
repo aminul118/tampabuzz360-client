@@ -1,7 +1,12 @@
-import { allThingsGood, moreFromUs } from "@/lib/constants/footerMenu";
+import { moreFromUs } from "@/lib/constants/footerMenu";
 import navMenu from "@/lib/constants/navMenu";
 import getAllIds from "@/lib/getAllIds";
 import { MetadataRoute } from "next";
+
+interface IMenu {
+  title: string;
+  url: string;
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.tampabuzz360.com";
@@ -9,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const getAllMongodbId = await getAllIds();
   const mongoIds = getAllMongodbId.data;
 
-  const generateSitemapEntries = (menu: { title: string; url: string }[]) =>
+  const generateSitemapEntries = (menu: IMenu[]) =>
     menu.map((item) => ({
       url: `${baseUrl}${item.url}`,
       lastModified: new Date(),
@@ -31,8 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly",
       priority: 1,
     },
-    ...generateSitemapEntries(navMenu), //navbar url which is static
-    ...generateSitemapEntries(allThingsGood),
+    ...generateSitemapEntries(navMenu), 
     ...generateSitemapEntries(moreFromUs),
     ...dynamicNewsIds,
   ];

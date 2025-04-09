@@ -9,7 +9,7 @@ import getAllNews from "@/lib/getAllNews";
 
 const LetestStories = async () => {
   const news = await getAllNews({ limit: "10" });
-  console.log(news);
+  // console.log(news);
 
   // Date Format
   const formatDate = (isoDate: string) => {

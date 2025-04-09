@@ -2,6 +2,15 @@ import "./globals.css";
 import ThemeProvider from "@/providers/ThemeProvider";
 import generateSEO from "@/lib/seo";
 
+import { Poppins } from "next/font/google";
+import { TChildren } from "@/lib/types/types";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap", // Prevent render-blocking
+});
+
 export const metadata = generateSEO({
   title: "TampaBuzz",
   description:
@@ -15,13 +24,13 @@ export const metadata = generateSEO({
   ],
 });
 
-export type ChildrenType = {
-  children: React.ReactNode;
-};
-
-const RootLayout = ({ children }: ChildrenType) => {
+const RootLayout = ({ children }: TChildren) => {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html
+      lang="en"
+      suppressHydrationWarning={true}
+      className={poppins.className} // ✅ Apply the font here
+    >
       <body>
         <ThemeProvider
           attribute="class"

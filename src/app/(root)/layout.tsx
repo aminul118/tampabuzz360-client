@@ -1,8 +1,8 @@
-import { ChildrenType } from "../layout";
 import Navbar from "@/components/Layouts/Navbar/Navbar";
 import Footer from "@/components/Layouts/Footer/Footer";
+import { TChildren } from "@/lib/types/types";
 
-const MainLayout = ({ children }: ChildrenType) => {
+const MainLayout = ({ children }: TChildren) => {
   return (
     <>
       <Navbar />

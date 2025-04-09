@@ -1,11 +1,11 @@
-import React from 'react';
 
-const NewsPage = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+import React from "react";
+
+
+const TampaPage = () => {
+  return <div>
+    
+  </div>;
 };
 
-export default NewsPage;
+export default TampaPage;

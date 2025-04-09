@@ -48,6 +48,20 @@ const generateSEO = ({
       index: true,
       follow: true,
     },
+    icons: {
+      icon: [
+        { url: "/icons/favicon.ico", type: "image/x-icon" },
+        { url: "/icons/favicon.svg", type: "image/svg+xml" },
+      ],
+      shortcut: "/icons/favicon.ico",
+      apple: [
+        {
+          url: "/icons/apple-touch-icon.png",
+          sizes: "180x180",
+          type: "image/png",
+        },
+      ],
+    },
     other: {
       "application-name": "Tampabuzz360",
       "apple-mobile-web-app-title": "Tampabuzz360",

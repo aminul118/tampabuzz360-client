@@ -6,7 +6,7 @@ import { allThingsGood, moreFromUs } from "@/lib/constants/footerMenu";
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-10 px-4 md:px-10 text-white">
+    <footer className="bg-black py-10 px-2 ">
       <div className="flex flex-col md:flex-row gap-6 justify-between container mx-auto">
         {/* Left */}
         <div className=" flex flex-col justify-center gap-4">

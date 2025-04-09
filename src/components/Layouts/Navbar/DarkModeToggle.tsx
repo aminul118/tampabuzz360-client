@@ -28,7 +28,12 @@ const DarkModeToggle = () => {
   if (darkMode === null) return null; // Prevent rendering until theme is determined
 
   return (
-    <Button onClick={toggleDarkMode}>{darkMode ? <Sun /> : <Moon />}</Button>
+    <Button
+      onClick={toggleDarkMode}
+      aria-label="Theme toggle dark and light mood"
+    >
+      {darkMode ? <Sun /> : <Moon />}
+    </Button>
   );
 };
 

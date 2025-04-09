@@ -55,7 +55,7 @@ const LetestStories = async () => {
         })}
       </div>
       <div className="flex justify-center mt-6">
-        <Link href="/tampa-today">
+        <Link href="/tampa">
           <Button>Browse all stories</Button>
         </Link>
       </div>

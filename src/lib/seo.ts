@@ -7,9 +7,9 @@ type SEOProps = {
   url?: string;
   images?: string[];
   author?: string;
-  type?: "website" | "article"; // For handling blog posts
-  publishedAt?: string; // For article posts
-  updatedAt?: string; // For article posts
+  type?: "website" | "article";
+  publishedAt?: string;
+  updatedAt?: string;
 };
 
 const generateSEO = ({
@@ -19,28 +19,35 @@ const generateSEO = ({
   url = "https://www.tampabuzz360.com",
   images = [],
   author = "Md Aminul Islam",
-  type = "website", // Default to 'website', but can be 'article' for blog posts
-  publishedAt = "", // Date for blog posts
-  updatedAt = "", // Date for blog posts
+  type = "website",
+  publishedAt = "",
+  updatedAt = "",
 }: SEOProps): Metadata => {
-  const defaultImage = "https://aminul.tech/images/banner/aminul.png";
-  const uniqueImages = Array.from(new Set([defaultImage, ...images]));
+  const defaultImage = "https://www.aminul.tech/assets/banner/aminul.png";
 
-  const commonMeta = {
+  const imageSet =
+    images.length > 0 ? Array.from(new Set(images)) : [defaultImage];
+
+  let metadataBase: URL;
+  try {
+    metadataBase = new URL(url);
+  } catch {
+    metadataBase = new URL("https://www.tampabuzz360.com");
+  }
+
+  const commonMeta: Metadata = {
     title,
     description,
     keywords,
-    metadataBase: new URL(url),
-    authors: [{ name: author, url }],
+    metadataBase,
+    authors: [{ name: author, url: metadataBase.href }],
     alternates: {
-      canonical: url,
+      canonical: metadataBase.href,
     },
-
     robots: {
       index: true,
       follow: true,
     },
-
     other: {
       "application-name": "Tampabuzz360",
       "apple-mobile-web-app-title": "Tampabuzz360",
@@ -50,60 +57,42 @@ const generateSEO = ({
     },
   };
 
-  if (type === "article") {
-    return {
-      ...commonMeta,
-      openGraph: {
-        type: "article",
-        locale: "en_US",
-        url,
-        title,
-        description,
-        siteName: "Tampabuzz360",
-        publishedTime: publishedAt,
-        modifiedTime: updatedAt,
-        images: uniqueImages.map((img) => ({
-          url: img,
-          width: 1200,
-          height: 630,
-          alt: title,
-        })),
-      },
-      twitter: {
-        card: "summary_large_image",
-        site: "@tampabuzz360", // optional: Website's Twitter handle
-        creator: "@aminul_dev", //  Content creator's (author's) Twitter handle
-        title,
-        description,
-        images: [uniqueImages[0]],
-      },
-    };
-  }
+  const openGraphImages = imageSet.map((img) => ({
+    url: img,
+    width: 1200,
+    height: 630,
+    alt: title,
+  }));
+
+  const twitterImages = imageSet[0] ? [imageSet[0]] : [];
+
+  const openGraph = {
+    type,
+    locale: "en_US",
+    url: metadataBase.href,
+    title,
+    description,
+    siteName: "Tampabuzz360",
+    images: openGraphImages,
+    ...(type === "article" && {
+      publishedTime: publishedAt,
+      modifiedTime: updatedAt,
+    }),
+  };
+
+  const twitter = {
+    card: "summary_large_image",
+    site: "@tampabuzz360",
+    creator: "@aminul_dev",
+    title,
+    description,
+    images: twitterImages,
+  };
 
   return {
     ...commonMeta,
-    openGraph: {
-      type: "website",
-      locale: "en_US",
-      url,
-      title,
-      description,
-      siteName: "Tampabuzz360",
-      images: uniqueImages.map((img) => ({
-        url: img,
-        width: 1200,
-        height: 630,
-        alt: title,
-      })),
-    },
-    twitter: {
-      card: "summary_large_image",
-      site: "@tampabuzz360", // optional: Website's Twitter handle
-      creator: "@aminul_dev", //  Content creator's (author's) Twitter handle
-      title,
-      description,
-      images: [uniqueImages[0]],
-    },
+    openGraph,
+    twitter,
   };
 };
 

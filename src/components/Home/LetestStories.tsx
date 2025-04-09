@@ -7,29 +7,27 @@ import Title from "../ui/Title";
 import { Button } from "../ui/button";
 import getAllNews from "@/lib/getAllNews";
 
-const LetestStories = async () => {
-  const news = await getAllNews({ limit: "10" });
-  // console.log(news);
+const formatDate = (isoDate: string) => {
+  const date = new Date(isoDate);
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC", // ensures consistent server & client output
+  }).format(date);
+};
 
-  // Date Format
-  const formatDate = (isoDate: string) => {
-    const date = new Date(isoDate);
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
+const LatestStories = async () => {
+  const news = await getAllNews({ limit: "10" });
 
   return (
     <Container>
-      <Title title="Letest Stories" />
+      <Title title="Latest Stories" />
 
       <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
         {news?.data?.map((singleNews: any) => {
           const { _id, mainHeading, contents, updatedAt } = singleNews;
-          const imageUrl = contents?.[0]?.image;
-          console.log(singleNews);
+          const imageUrl = contents?.[0]?.image || "/default-image.jpg";
           const formatted = formatDate(updatedAt);
 
           return (
@@ -54,6 +52,7 @@ const LetestStories = async () => {
           );
         })}
       </div>
+
       <div className="flex justify-center mt-6">
         <Link href="/tampa">
           <Button>Browse all stories</Button>
@@ -63,4 +62,4 @@ const LetestStories = async () => {
   );
 };
 
-export default LetestStories;
+export default LatestStories;

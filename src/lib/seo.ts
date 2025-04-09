@@ -50,7 +50,7 @@ const generateSEO = ({
     },
     icons: {
       icon: [
-        { url: "/icons/favicon.ico", type: "image/x-icon" },
+        { url: "/icons/favicon.ico", type: "image/x-icon", sizes: "any" },
         { url: "/icons/favicon.svg", type: "image/svg+xml" },
       ],
       shortcut: "/icons/favicon.ico",

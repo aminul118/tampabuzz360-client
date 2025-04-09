@@ -19,11 +19,11 @@ const generateSEO = ({
   url = "https://www.tampabuzz360.com",
   images = [],
   author = "Md Aminul Islam",
-  type = "website",  // Default to 'website', but can be 'article' for blog posts
+  type = "website", // Default to 'website', but can be 'article' for blog posts
   publishedAt = "", // Date for blog posts
   updatedAt = "", // Date for blog posts
 }: SEOProps): Metadata => {
-  const defaultImage = "https://aminul.tech/assets/banner/aminul.png";
+  const defaultImage = "https://aminul.tech/images/banner/aminul.png";
   const uniqueImages = Array.from(new Set([defaultImage, ...images]));
 
   const commonMeta = {
@@ -35,15 +35,12 @@ const generateSEO = ({
     alternates: {
       canonical: url,
     },
-    icons: {
-      icon: "/logo.svg",
-      shortcut: "/favicon.ico",
-      apple: "/apple-touch-icon.png",
-    },
+
     robots: {
       index: true,
       follow: true,
     },
+
     other: {
       "application-name": "Tampabuzz360",
       "apple-mobile-web-app-title": "Tampabuzz360",

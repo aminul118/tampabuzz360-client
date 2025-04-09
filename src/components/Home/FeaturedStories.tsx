@@ -7,10 +7,10 @@ const FeaturedStories = () => {
     <Container>
       <Title title="Featured Stories" />
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <NewsCard src="/assets/features/1.jpg" alt="demo 1" />
-        <NewsCard src="/assets/features/2.webp" alt="demo 1" />
-        <NewsCard src="/assets/features/3.jpg" alt="demo 1" />
-        <NewsCard src="/assets/features/1.jpg" alt="demo 1" />
+        <NewsCard src="/images/features/1.jpg" alt="demo 1" />
+        <NewsCard src="/images/features/2.webp" alt="demo 1" />
+        <NewsCard src="/images/features/3.jpg" alt="demo 1" />
+        <NewsCard src="/images/features/1.jpg" alt="demo 1" />
       </div>
     </Container>
   );

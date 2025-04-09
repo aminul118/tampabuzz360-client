@@ -5,7 +5,7 @@ const Loading = () => {
   return (
     <div className="flex flex-col justify-center items-center min-h-[calc(100vh-284px)]">
       <Image
-        src="/assets/loading.gif"
+        src="/images/loading.gif"
         alt="Loading spinner for loader"
         width={100}
         height={100}

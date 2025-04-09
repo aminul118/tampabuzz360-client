@@ -18,9 +18,9 @@ export const metadata = generateSEO({
   keywords: "Web Developer, MERN Stack, Next.js, SEO",
   url: "https://www.tampabuzz360.com",
   images: [
-    "https://aminul.tech/assets/banner/aminul.png",
-    "https://aminul.tech/assets/projects/project1.png",
-    "https://aminul.tech/assets/projects/project2.png",
+    "https://aminul.tech/images/banner/aminul.png",
+    "https://aminul.tech/images/projects/project1.png",
+    "https://aminul.tech/images/projects/project2.png",
   ],
 });
 

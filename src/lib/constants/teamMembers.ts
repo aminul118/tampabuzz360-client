@@ -9,7 +9,6 @@ interface ITeam {
   photo: string;
 }
 
-
 const teamMembers: ITeam[] = [
   {
     _id: "1",
@@ -19,7 +18,7 @@ const teamMembers: ITeam[] = [
       "Passionate developer with experience in React, Next.js, and UI/UX design.",
     email: "aminul@example.com",
     phone: "+880123456789",
-    photo: "https://randomuser.me/api/portraits/men/75.jpg",
+    photo: "/images/team/aminul.jpg",
   },
   {
     _id: "2",
@@ -29,7 +28,7 @@ const teamMembers: ITeam[] = [
       "Creative designer specializing in clean, user-friendly interfaces.",
     email: "sarah@example.com",
     phone: "+8801987654321",
-    photo: "https://randomuser.me/api/portraits/women/65.jpg",
+    photo: "/images/team/aminul.jpg",
   },
   {
     _id: "3",
@@ -39,7 +38,7 @@ const teamMembers: ITeam[] = [
       "Skilled in building robust full-stack applications with MERN stack.",
     email: "raihan@example.com",
     phone: "+8801678901234",
-    photo: "https://randomuser.me/api/portraits/men/85.jpg",
+    photo: "/images/team/aminul.jpg",
   },
 ];
 

@@ -22,7 +22,7 @@ const Footer = () => {
               />
             </Link>
           </div>
-          <p className=" text-sm max-w-xl">
+          <p className=" text-sm max-w-xl text-white">
             Since 2013, That’s So Tampa has been the most trusted local resource
             for discovering All Things Good in Tampa Bay.
           </p>
@@ -30,7 +30,9 @@ const Footer = () => {
 
         {/* Middle */}
         <div>
-          <p className="text-lg font-semibold mb-5">All Things Good</p>
+          <p className="text-lg font-semibold mb-5 text-white">
+            All Things Good
+          </p>
           <ul className="space-y-2">
             {allThingsGood.map((menu, i) => (
               <li key={i}>
@@ -44,7 +46,7 @@ const Footer = () => {
 
         {/* Right */}
         <div>
-          <p className="text-lg font-semibold mb-5">More From Us</p>
+          <p className="text-lg font-semibold mb-5 text-white">More From Us</p>
           <ul className="space-y-2">
             {moreFromUs.map((menu, i) => (
               <li key={i}>

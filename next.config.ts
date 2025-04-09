@@ -18,35 +18,35 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Adding custom headers for security
   async headers() {
     return [
       {
-        source: '/(.*)', // Apply to all routes
+        source: "/(.*)",
         headers: [
           {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=31536000; includeSubDomains; preload',
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000; includeSubDomains; preload",
           },
           {
-            key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.ibb.co https://i.ibb.co.com; connect-src 'self'; font-src 'self'; object-src 'none'; frame-ancestors 'none';",
+            key: "Content-Security-Policy",
+            value:
+              "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://i.ibb.co https://i.ibb.co.com; connect-src 'self'; object-src 'none'; frame-ancestors 'none';",
           },
           {
-            key: 'X-Frame-Options',
-            value: 'DENY',
+            key: "X-Frame-Options",
+            value: "DENY",
           },
           {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
+            key: "X-Content-Type-Options",
+            value: "nosniff",
           },
           {
-            key: 'Referrer-Policy',
-            value: 'no-referrer',
+            key: "Referrer-Policy",
+            value: "no-referrer",
           },
           {
-            key: 'Permissions-Policy',
-            value: 'geolocation=(self), microphone=()',
+            key: "Permissions-Policy",
+            value: "geolocation=(self), microphone=()",
           },
         ],
       },

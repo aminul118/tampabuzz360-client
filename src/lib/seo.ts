@@ -23,7 +23,8 @@ const generateSEO = ({
   publishedAt = "",
   updatedAt = "",
 }: SEOProps): Metadata => {
-  const defaultImage = "https://www.aminul.tech/assets/banner/aminul.png";
+  const defaultImage =
+    "https://www.tampabuzz360.com/images/features/thumbnails.png";
 
   const imageSet =
     images.length > 0 ? Array.from(new Set(images)) : [defaultImage];
@@ -43,10 +44,6 @@ const generateSEO = ({
     authors: [{ name: author, url: metadataBase.href }],
     alternates: {
       canonical: metadataBase.href,
-    },
-    robots: {
-      index: true,
-      follow: true,
     },
 
     other: {

@@ -11,16 +11,16 @@ const NotFound = () => {
         {/* Next.js 15 Image Fix */}
         <Image
           src="not-found.svg"
-          alt="Error 404"
+          alt="Page not found image of Tampabuzz360"
           width={0}
           height={0}
           sizes="100vw"
           className="w-64 h-64 mx-auto"
         />
 
-        <h2 className="text-4xl font-semibold text-gray-800 mb-4">
+        <h1 className="text-4xl font-semibold text-gray-800 mb-4">
           Page Not Found
-        </h2>
+        </h1>
         <p className="text-gray-600 mb-6">
           Sorry, we couldn’t find the page you’re looking for.
         </p>

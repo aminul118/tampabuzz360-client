@@ -27,6 +27,12 @@ const RootLayout = ({ children }: TChildren) => {
       suppressHydrationWarning={true}
       className={poppins.className} // ✅ Apply the font here
     >
+      <head>
+        <link rel="icon" href="/icons/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
       <body>
         <ThemeProvider
           attribute="class"

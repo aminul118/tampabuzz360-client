@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ) || "Read the latest news and insights from Tampa.";
 
   return generateSEO({
-    title: `Tampa | ${mainHeading}`,
+    title: `${mainHeading} | Tampabuzz360`,
     description,
     author,
     type: "article",

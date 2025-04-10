@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     type: "article",
     publishedAt: createdAt,
     updatedAt: updatedAt,
-    keywords: `${mainHeading}, Tampa, news, Florida, ${category}`,
+    keywords: `${mainHeading}, ${category}`,
     url: `https://www.tampabuzz360.com/tampa/${id}`,
     images: contents?.map((content: any) => content.image) || [],
   });

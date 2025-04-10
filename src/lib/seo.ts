@@ -63,6 +63,7 @@ const generateSEO = ({
       ],
     },
     other: {
+      "fb:app_id": "1615679795750113",
       "application-name": "Tampabuzz360",
       "apple-mobile-web-app-title": "Tampabuzz360",
       "theme-color": "#ffffff",

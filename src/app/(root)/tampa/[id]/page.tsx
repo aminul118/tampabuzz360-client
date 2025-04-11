@@ -8,12 +8,12 @@ import Image from "next/image";
 import React from "react";
 
 type Props = {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 };
 
 // ! SEO Metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params;
+  const { id } = params;
   const news = await getNewsById(id);
   const { mainHeading, author, category, contents, createdAt, updatedAt } =
     news.data;
@@ -40,8 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // ! Main News Details Page
-const NewsDetailsPage = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+const NewsDetailsPage = async ({ params }: any) => {
+  const { id } = await params;
   const news = await getNewsById(id);
   const { mainHeading, author, contents, createdAt, updatedAt } = news.data;
 

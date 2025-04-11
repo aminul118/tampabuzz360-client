@@ -1,6 +1,6 @@
 import Container from "@/components/ui/Container";
 import Title from "@/components/ui/Title";
-import generateSEO from "@/lib/seo";
+import generateSEO from "@/lib/seo/seo";
 
 export const metadata = generateSEO({
   title: " Careers - TampaBuzz360",

@@ -3,7 +3,7 @@ import AdvertisingDisclaimer from "@/components/About/AdvertisingDisclaimer";
 import Team from "@/components/About/Team";
 import Vision from "@/components/About/Vision";
 import Container from "@/components/ui/Container";
-import generateSEO from "@/lib/seo";
+import generateSEO from "@/lib/seo/seo";
 import React from "react";
 
 export const metadata = generateSEO({

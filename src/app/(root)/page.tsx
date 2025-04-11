@@ -2,7 +2,7 @@ import BrekingNews from "@/components/Home/BrekingNews";
 import FeaturedStories from "@/components/Home/FeaturedStories";
 import LetestStories from "@/components/Home/LetestStories";
 import Promotion from "@/components/Home/Promotion";
-import generateSEO from "@/lib/seo";
+import generateSEO from "@/lib/seo/seo";
 
 export const metadata = generateSEO({
   title:

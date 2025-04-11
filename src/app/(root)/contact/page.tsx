@@ -1,7 +1,7 @@
 import ContactForm from "@/components/Contact/ContactForm";
 import ContactInfo from "@/components/Contact/ContactInfo";
 import Container from "@/components/ui/Container";
-import generateSEO from "@/lib/seo";
+import generateSEO from "@/lib/seo/seo";
 
 export const metadata = generateSEO({
   title: "Contact - TampaBuzz360",

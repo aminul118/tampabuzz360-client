@@ -2,15 +2,12 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import getNewsById from "@/lib/getNewsById";
-import { Metadata } from "next";
 import generateSEO from "@/lib/seo/seo";
 import generateJsonLd from "@/lib/seo/generateJsonLd";
 
-type Props = {
-  params: { id: string };
-};
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+
+export async function generateMetadata({ params }: any) {
   const { id } = params;
   const news = await getNewsById(id);
   const { mainHeading, author, category, contents, createdAt, updatedAt } =

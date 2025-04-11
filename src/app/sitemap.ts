@@ -9,7 +9,7 @@ interface IMenu {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://www.tampabuzz360.com";
+  const baseUrl = "https://tampabuzz360.com";
 
   const getAllMongodbId = await getAllIds();
   const mongoIds = getAllMongodbId.data;

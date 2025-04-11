@@ -16,7 +16,7 @@ const generateSEO = ({
   title,
   description,
   keywords = "Tampabuzz, tampabuzz360, tampa, tampa360, usa, florida",
-  url = "https://www.tampabuzz360.com",
+  url = "https://tampabuzz360.com",
   images = [],
   author = "Md Aminul Islam",
   type = "website",
@@ -24,7 +24,7 @@ const generateSEO = ({
   updatedAt = "",
 }: SEOProps): Metadata => {
   const defaultImage =
-    "https://www.tampabuzz360.com/images/features/thumbnails.png";
+    "https://tampabuzz360.com/images/features/thumbnails.png";
 
   const imageSet =
     images.length > 0 ? Array.from(new Set(images)) : [defaultImage];
@@ -33,7 +33,7 @@ const generateSEO = ({
   try {
     metadataBase = new URL(url);
   } catch {
-    metadataBase = new URL("https://www.tampabuzz360.com");
+    metadataBase = new URL("https://tampabuzz360.com");
   }
 
   const commonMeta: Metadata = {

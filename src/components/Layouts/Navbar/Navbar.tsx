@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-50 h-16 flex items-center justify-center bg-white dark:bg-slate-950 shadow-md">
+    <header className="sticky top-0 z-50 h-16 flex items-center justify-center bg-white dark:bg-slate-950 shadow-md">
       <div className="container mx-auto flex justify-between items-center px-4 text-[#EA1C79] font-semibold">
         {/* Logo */}
         <div className="dark:hidden">
@@ -89,7 +89,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </div>
+    </header>
   );
 };
 

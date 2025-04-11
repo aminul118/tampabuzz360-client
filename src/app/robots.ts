@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://www.tampabuzz360.com/sitemap.xml",
+    sitemap: "https://tampabuzz360.com/sitemap.xml",
   };
 }

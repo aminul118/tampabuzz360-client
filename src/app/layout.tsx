@@ -12,8 +12,6 @@ const RootLayout = ({ children }: TChildren) => {
         <meta name="robots" content="index, follow" />
       </head>
       <body>
-        {/* Google */}
-        <GoogleAnalytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -21,6 +19,8 @@ const RootLayout = ({ children }: TChildren) => {
           disableTransitionOnChange
         >
           {children}
+          {/* Google */}
+          <GoogleAnalytics />
         </ThemeProvider>
       </body>
     </html>

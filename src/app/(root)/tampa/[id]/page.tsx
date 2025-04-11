@@ -40,11 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // ! Main News Details Page
-const NewsDetailsPage = async ({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) => {
+const NewsDetailsPage = async ({ params }: any) => {
   const { id } = await params;
   const news = await getNewsById(id);
   const { mainHeading, author, contents, createdAt, updatedAt } = news.data;

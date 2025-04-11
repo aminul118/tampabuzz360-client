@@ -1,15 +1,8 @@
 import "./globals.css";
 import ThemeProvider from "@/providers/ThemeProvider";
-
-import { Poppins } from "next/font/google";
+import { poppins } from "./fonts";
 import { TChildren } from "@/lib/types/types";
-
-// Load Poppins font with optimal settings
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap", // Prevent render-blocking
-});
+import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalytics";
 
 const RootLayout = ({ children }: TChildren) => {
   return (
@@ -19,6 +12,8 @@ const RootLayout = ({ children }: TChildren) => {
         <meta name="robots" content="index, follow" />
       </head>
       <body>
+        {/* Google */}
+        <GoogleAnalytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
